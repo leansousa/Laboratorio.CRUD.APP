@@ -1,0 +1,30 @@
+<mat-card class="card">
+    <mat-card-title>Empresa - Excluir</mat-card-title>
+    <form class="form-data">
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Nome"
+          [value]="company.name"
+          name="name"
+          disabled
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Porte da Empresa"
+          [value]="company.size.description"
+          name="description"
+          disabled
+        />
+      </mat-form-field>    
+    </form>
+    <div>
+      <button mat-raised-button (click)="deleteCompany()" color="accent">
+        Excluir
+      </button>
+  
+      <button mat-raised-button (click)="cancel()">Cancelar</button>
+    </div>
+  </mat-card>

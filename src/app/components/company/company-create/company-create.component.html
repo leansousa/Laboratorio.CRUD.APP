@@ -1,0 +1,29 @@
+<mat-card class="card">
+  <mat-card-title>Empresa - Inserir</mat-card-title>
+  <form class="form-data">
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Nome"
+        [(ngModel)]="company.name"
+        name="name"
+        required
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Porte</mat-label>
+      <mat-select [(ngModel)]="company.size.id" name="sizeId">
+        <mat-option *ngFor="let companySizeOption of companySizeList" [value]="companySizeOption.id">
+          {{companySizeOption.description}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>    
+  </form>
+  <div>
+    <button mat-raised-button (click)="createCompany()" color="primary">
+      Salvar
+    </button>
+
+    <button mat-raised-button (click)="cancel()">Cancelar</button>
+  </div>
+</mat-card>
